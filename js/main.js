@@ -42,7 +42,7 @@ function calculate() {
   const holdings = $("#holdings").val();
   const rewards = holdings * (roi / 100);
 
-  console.log("Rewards: " + rewards + " ICX");
+  console.log("Yearly ROI: " + numeral(rewards).format("0.00") + " ICX");
 
   // -------------------------------------------------------------------------------------------------------------------
   // Un-Staking Period Calculation
@@ -51,5 +51,5 @@ function calculate() {
 
   const l_period = ((l_max - l_min) / (r_point ** 2)) * (((data["stakedSupply"] / data["totalSupply"]) - r_point) ** 2) + l_min;
 
-  console.log("Un-Staking Period: " + l_period + " days");
+  console.log("Un-Staking Period: ~" + numeral(l_period).format("0.0") + " days");
 }
