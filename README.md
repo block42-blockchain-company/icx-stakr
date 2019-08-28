@@ -9,8 +9,4 @@
   </a>
 </div>
 
-<br />
-
-<br />
-
 A set of tools for the ICON blockchain.
