@@ -18,16 +18,24 @@
   <div class="container">
     <h1>ICON Tools</h1>
 
-    <form>
+    <form class="needs-validation" novalidate>
       <div class="form-group">
-        <input type="number" class="form-control" id="networkStaked" aria-describedby="networkStakedHelp" placeholder="" disabled>
-        <small id="networkStakedHelp" class="form-text text-muted">🔥 Live from tracker.icon.foundation</small>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="staked" placeholder="Loading ..." aria-label="Staked" aria-describedby="staked-info" disabled>
+          <div class="input-group-append">
+            <span class="input-group-text" id="staked-info">% of network staked</span>
+          </div>
+        </div>
       </div>
       <div class="form-group">
-        <input type="number" class="form-control" id="icxHoldings" aria-describedby="icxHoldingsHelp" placeholder="ICX Holdings">
-        <small id="icxHoldingsHelp" class="form-text text-muted">💰 Amount of ICX you stake</small>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
+          <div class="input-group-append">
+            <span class="input-group-text" id="holdings-info">ICX</span>
+          </div>
+        </div>
       </div>
-      <button type="button" class="btn btn-primary" onclick="fetchIconNetworkData()">Calculate</button>
+      <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
     </form>
   </div>
 
@@ -35,8 +43,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
   <script src="js/main.js"></script>
 
 </body>
+
+<script>
+  window.onload = function() {
+    fetchIconNetworkData();
+  };
+</script>
 
 </html>
