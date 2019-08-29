@@ -1,4 +1,4 @@
-# icon-tools 🧰
+# ICX Stakr
 
 <div>
   <a href="#">
@@ -11,4 +11,4 @@
 
 <br>
 
-A set of tools for the ICON blockchain.
+The most simple you calculator will find out there.
