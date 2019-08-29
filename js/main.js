@@ -1,3 +1,5 @@
+const r_min = 0.02, r_max = 0.12, r_point = 0.7;
+
 const data = {};
 
 function fetchIconNetworkData() {
@@ -23,41 +25,41 @@ function fetchIconNetworkData() {
 
       console.log("Staked Supply: " + stakedSupply + " ICX");
       console.log("Delegated Supply: " + delegatedSupply + " ICX");
+
+      $("#staked").text(numeral(stakedSupply).format("0,0") + " ICX");
+      $("#voted").text(numeral(delegatedSupply).format("0,0") + " ICX");
+      $("#reward-rate").text(numeral(getRewardRate()).format("0.00") + " %");
+      $("#un-staking-period").text("~" + numeral(getUnStakingPeriod()).format("0") + " days");
     })
   })
 }
 
-function calculate() {
-  const r_min = 0.02, r_max = 0.12, r_point = 0.7;
+function getUnStakingPeriod() {
+  const l_min = 5, l_max = 20;
 
-  // -------------------------------------------------------------------------------------------------------------------
-  // Reward Calculation
-  // -------------------------------------------------------------------------------------------------------------------
-  let delegationRate = data["delegatedSupply"] / data["totalSupply"];
+  const totalSupply = data["totalSupply"];
+  const stakedSupply = data["stakedSupply"];
+
+  return ((l_max - l_min) / (r_point ** 2)) * (((stakedSupply / totalSupply) - r_point) ** 2) + l_min;
+}
+
+function getRewardRate() {
+  const totalSupply = data["totalSupply"];
+  const delegatedSupply = data["delegatedSupply"];
+
+  let delegationRate = delegatedSupply / totalSupply;
   if(delegationRate >= 0.7) delegationRate = 0.7;
 
   const r_rep = ((r_max - r_min) / (r_point ** 2)) * (delegationRate - r_point) ** 2 + r_min;
-  const roi = (r_rep * 100 * 3).toFixed(2); // Assuming same delegation rates for other two sectors --> * 3
 
+  return (r_rep * 100 * 3).toFixed(2); // Assuming same delegation rates for other two sectors --> * 3
+}
+
+function calculateRewards() {
   const holdings = $("#holdings").val();
-  const rewards = holdings * (roi / 100);
+  const rewardRate = getRewardRate();
 
-  console.log("ROI in % (per year): " + numeral(roi).format("0.00") + " %");
-  console.log("ROI in ICX (per year): " + numeral(rewards).format("0.00") + " ICX");
+  const rewards = holdings * (rewardRate / 100); // in ICX
 
-  // -------------------------------------------------------------------------------------------------------------------
-  // Un-Staking Period Calculation
-  // -------------------------------------------------------------------------------------------------------------------
-  const l_min = 5, l_max = 20;
-
-  const l_period = ((l_max - l_min) / (r_point ** 2)) * (((data["stakedSupply"] / data["totalSupply"]) - r_point) ** 2) + l_min;
-
-  console.log("Un-Staking Period: ~" + numeral(l_period).format("0.0") + " days");
-
-  // Output
-  $("#result").text(
-      "ROI in % (per year): " + numeral(roi).format("0.00") + " %" + "  🔸  " +
-      "ROI in ICX (per year): " + numeral(rewards).format("0.00") + " ICX" + "  🔸  " +
-      "Un-Staking Period: ~" + numeral(l_period).format("0.0") + " days"
-  );
+  $("#result").text(numeral(rewards).format("0.00") + " ICX");
 }

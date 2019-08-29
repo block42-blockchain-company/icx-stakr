@@ -1,57 +1,155 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
   <meta charset="utf-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
+  <title>ICON Calculator</title>
 
-  <meta name="theme-color" content="#64c7cc">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body id="page-top">
 
-  <div class="container">
-    <h1>ICON Tools</h1>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">ICXStakr</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#calculator">Reward Calculator</a>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#faq">FAQ</a>
+          </li>
+          -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about-us">About us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Reward Calculator</h2>
-
-    <p>As simple as putting in the amount of your staked ICX! 👊</p>
-
-    <form>
-      <div class="form-group">
-        <div class="input-group mb-3">
-          <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
-          <div class="input-group-append">
-            <span class="input-group-text" id="holdings-info">ICX</span>
-          </div>
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>ICXStakr</h1>
+      <p class="lead">The most simple you calculator will find out there. 🧐 From ICONists, for ICONists. 🤗</p>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          <p>🥩 Staked: <span id="staked">?</span></p>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <p>🗳 Voted: <span id="voted">?</span></p>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <p>💰 Reward Rate: <span id="reward-rate">?</span></p>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <p>🔒 Un-Staking Period: <span id="un-staking-period">?</span></p>
         </div>
       </div>
-      <p id="result"></p>
-      <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
-    </form>
+    </div>
+  </header>
 
-    <p>From ICONists for ICONists. Made with ❤️ in Austria.</p>
+  <section id="calculator">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6 mx-auto">
+          <h2>Reward Calculator</h2>
+          <p class="lead">Enter the amount of ICX you stake in order to calculate your staking ROI. The reward rate depends on your ICX holdings and the % of the total network at stake. So keep in mind it will change over time.</p>
 
-  </div>
+          <form>
+            <div class="col-sm-12 form-group">
+              <div class="input-group mb-3">
+                <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="holdings-info">ICX</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="col-sm-12 btn btn-primary" onclick="calculateRewards()">Calculate</button>
+          </form>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          <p id="result"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section id="faq" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>FAQ</h2>
+  </section>
+  -->
+
+  <section id="about-us" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About us</h2>
+          <p class="lead">We are <span class="font-weight-bold">block42 Blockchain Company</span>, a P-Rep candidate from 🇦🇹 (Graz, Austria). Our goal is to bring tremendous value to the ICON ecosystem by providing consulting & development services on top of the ICON blockchain as well as strengthen the European ICON community with our <a href="https://medium.com/block42-blockchain-company/announcing-icon-europe-community-93f797e54025">ICON Europe</a> initiative!</p>
+          <p><i>Check out our P-Rep application: <a href="https://icon.community/iconsensus/candidates/132/">here</a></i></p>
+          <p class="lead">Don't forget to vote for us as a P-Rep candidate! We appreciate every single vote. 🔥</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        <a href="https://twitter.com/block42_company"><img src="img/Twitter_Social_Icon_Circle_Color.png" alt="Twitter" height="40px" width="40px"></a>
+      </p>
+      <p class="m-0 text-center text-white">Made with ❤️ in Austria.</p>
+      <p class="m-0 text-center text-white">Copyright &copy; block42 Blockchain Company 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Http Client -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Human readable number formatter -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
   <script src="js/main.js"></script>
 
-</body>
+  <script>
+    window.onload = function() {
+      fetchIconNetworkData();
+      console.log("done");
+    };
+  </script>
 
-<script>
-  window.onload = function() {
-    fetchIconNetworkData();
-  };
-</script>
+</body>
 
 </html>
