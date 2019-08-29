@@ -70,12 +70,11 @@
   <section id="calculator">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 col-lg-6 mx-auto">
+        <div class="col-sm-12 col-lg-8 mx-auto">
           <h2>Reward Calculator</h2>
           <p class="lead">Enter the amount of ICX you stake in order to calculate your staking ROI. The reward rate depends on your ICX holdings and the % of the total network at stake. So keep in mind it will change over time.</p>
-
           <form>
-            <div class="col-sm-12 form-group">
+            <div class="form-group">
               <div class="input-group mb-3">
                 <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
                 <div class="input-group-append">
@@ -85,7 +84,6 @@
             </div>
             <button type="button" class="col-sm-12 btn btn-primary" onclick="calculateRewards()">Calculate</button>
           </form>
-
           <p id="result"></p>
         </div>
       </div>
