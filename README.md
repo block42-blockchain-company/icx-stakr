@@ -1,4 +1,4 @@
-# ICX Stakr
+# ICX Stakr 🥩🗳
 
 <div>
   <a href="#">
