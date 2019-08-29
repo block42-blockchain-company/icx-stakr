@@ -1,4 +1,4 @@
-@@font-face {
+@font-face {
   font-family: 'Oswald', sans-serif;
 }
 
@@ -30,7 +30,6 @@ header .supply-info div span {
   font-size: 1.5em;
 }
 
-
 section {
   padding: 100px;
   text-align: center;
@@ -55,7 +54,6 @@ section {
     background-color: #1aaaba !important;
 }
 
-
 .container .row h2 {
   text-align: center;
   padding-bottom: 1.3em;
@@ -64,7 +62,11 @@ section {
 
 }
 
-
 footer .container a img{
   margin-bottom: 1em;
+}
+
+.social {
+  height: 40px;
+  width: 40px;
 }

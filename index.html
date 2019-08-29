@@ -8,10 +8,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>ICON Calculator</title>
+  <title>ICX Stakr</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
@@ -24,7 +29,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">ICXStakr</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">ICX Stakr</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,20 +53,20 @@
 
   <header class="bg-primary text-white">
     <div class="container text-center">
-      <h1>ICXStakr</h1>
+      <h1>ICX Stakr</h1>
       <p class="lead">The most simple you calculator will find out there. 🧐 From ICONists, for ICONists. 🤗</p>
       <div class="row supply-info">
         <div class="col-sm-12 col-md-3">
-          <p>🥩 Staked: <br><span id="staked">?</span></p>
+          <p>🥩<br>Staked<br><span id="staked">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>🗳 Voted: <br><span id="voted">?</span></p>
+          <p>🗳<br>Voted<br><span id="voted">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>💰 Reward Rate: <br><span id="reward-rate">?</span></p>
+          <p>💰<br>Reward Rate<br><span id="reward-rate">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>🔒 Un-Staking Period: <br><span id="un-staking-period">?</span></p>
+          <p>🔒<br>Un-Staking Period<br><span id="un-staking-period">?</span></p>
         </div>
       </div>
     </div>
@@ -104,7 +109,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>About us</h2>
-          <p class="lead">We are <span class="font-weight-bold">block42 Blockchain Company</span>, a P-Rep candidate from 🇦🇹 (Graz, Austria). Our goal is to bring tremendous value to the ICON ecosystem by providing consulting & development services on top of the ICON blockchain as well as strengthen the European ICON community with our <a href="https://medium.com/block42-blockchain-company/announcing-icon-europe-community-93f797e54025">ICON Europe</a> initiative!</p>
+          <p class="lead">We are <span class="font-weight-bold">block42 Blockchain Company</span>, a P-Rep candidate from Graz, Austria 🇦🇹. Our goal is to bring tremendous value to the ICON ecosystem by providing consulting & development services on top of the ICON blockchain as well as strengthen the European ICON community with our <a href="https://medium.com/block42-blockchain-company/announcing-icon-europe-community-93f797e54025">ICON Europe</a> initiative!</p>
           <p><i>Check out our P-Rep application: <a href="https://icon.community/iconsensus/candidates/132/">here</a></i></p>
           <p class="lead">Don't forget to vote for us as a P-Rep candidate! We appreciate every single vote. 🔥</p>
         </div>
@@ -116,10 +121,10 @@
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">
-        <a href="https://twitter.com/block42_company"><img src="img/Twitter_Social_Icon_Circle_Color.png" alt="Twitter" height="40px" width="40px"></a>
+        <a href="https://twitter.com/block42_company"><img class="social" src="img/Twitter_Social_Icon_Circle_Color.png" alt="Twitter"></a>
       </p>
       <p class="m-0 text-center text-white">Made with ❤️ in Austria.</p>
-      <p class="m-0 text-center text-white">Copyright &copy; block42 Blockchain Company 2019</p>
+      <p id="copyright" class="m-0 text-center text-white">Copyright &copy; block42 Blockchain Company 2019</p>
     </div>
     <!-- /.container -->
   </footer>
@@ -141,17 +146,9 @@
   <script src="js/scrolling-nav.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
-
-
   <script>
     window.onload = function() {
       fetchIconNetworkData();
-      console.log("done");
     };
   </script>
 
