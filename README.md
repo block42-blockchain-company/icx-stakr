@@ -11,4 +11,4 @@
 
 <br>
 
-The most simple you calculator will find out there.
+The most simple you ICON reward and staking calculator will find out there.
