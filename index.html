@@ -50,18 +50,18 @@
     <div class="container text-center">
       <h1>ICXStakr</h1>
       <p class="lead">The most simple you calculator will find out there. 🧐 From ICONists, for ICONists. 🤗</p>
-      <div class="row">
+      <div class="row supply-info">
         <div class="col-sm-12 col-md-3">
-          <p>🥩 Staked: <span id="staked">?</span></p>
+          <p>🥩 Staked: <br><span id="staked">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>🗳 Voted: <span id="voted">?</span></p>
+          <p>🗳 Voted: <br><span id="voted">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>💰 Reward Rate: <span id="reward-rate">?</span></p>
+          <p>💰 Reward Rate: <br><span id="reward-rate">?</span></p>
         </div>
         <div class="col-sm-12 col-md-3">
-          <p>🔒 Un-Staking Period: <span id="un-staking-period">?</span></p>
+          <p>🔒 Un-Staking Period: <br><span id="un-staking-period">?</span></p>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
                 </div>
               </div>
             </div>
-            <button type="button" class="col-sm-12 btn btn-primary" onclick="calculateRewards()">Calculate</button>
+            <button type="button" class="col-sm-6 btn btn-primary" onclick="calculateRewards()">Calculate</button>
           </form>
           <p id="result"></p>
         </div>
@@ -140,6 +140,13 @@
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+
 
   <script>
     window.onload = function() {

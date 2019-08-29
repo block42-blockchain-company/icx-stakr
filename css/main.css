@@ -1,3 +1,70 @@
+@@font-face {
+  font-family: 'Oswald', sans-serif;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+header{
+  padding-bottom: 60px;
+}
+
+header h1 {
+  font-size: 2.8em;
+  margin-bottom: 1.1em;
+}
+header p {
+  /* margin-top: 1.5em; */
+  margin-bottom: 1.5em;
+}
+
+header .supply-info {
+  font-size: 1.3em;
+}
+header .supply-info .col-sm-12 {
+  /* border-bottom: 1px solid white;
+  border-top: 1px solid white; */
+}
+header .supply-info div span {
+  font-size: 1.5em;
+}
+
+
+section {
+  padding: 100px;
+  text-align: center;
+}
+
+#calculator{
+  background: url("https://icon.foundation/resources/image/icon_main_img_02.png") top center no-repeat, #fff;
+  background-size: auto;
+}
+
+#calculator button{
+  border-radius: 0;
+  background: #262626;
+  border: none;
+}
+
+#calculator p {
+  margin-bottom: 2.5em;
+}
+
 .bg-primary {
-    background-color: #64c7cc!important;
+    background-color: #1aaaba !important;
+}
+
+
+.container .row h2 {
+  text-align: center;
+  padding-bottom: 1.3em;
+  font-size: 2.5em;
+  font-weight: bold;
+
+}
+
+
+footer .container a img{
+  margin-bottom: 1em;
 }
