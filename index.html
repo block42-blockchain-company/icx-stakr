@@ -22,15 +22,12 @@
 
     <p>As simple as putting in the amount of your staked ICX! 👊</p>
 
-    <form class="needs-validation" novalidate>
+    <form>
       <div class="form-group">
         <div class="input-group mb-3">
           <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
           <div class="input-group-append">
             <span class="input-group-text" id="holdings-info">ICX</span>
-          </div>
-          <div class="invalid-feedback">
-            Please enter the amount of ICX you stake!
           </div>
         </div>
       </div>
@@ -55,25 +52,6 @@
   window.onload = function() {
     fetchIconNetworkData();
   };
-
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
 </script>
 
 </html>
