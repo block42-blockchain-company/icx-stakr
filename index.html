@@ -83,12 +83,7 @@
           <p class="lead">Enter the amount of ICX you stake in order to calculate your staking ROI. The reward rate depends on your ICX holdings and the % of the total network at stake. So keep in mind it will change over time.</p>
           <form>
             <div class="form-group">
-              <div class="input-group mb-3">
-                <input type="number" class="form-control" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings" aria-describedby="holdings-info">
-                <div class="input-group-append">
-                  <span class="input-group-text" id="holdings-info">ICX</span>
-                </div>
-              </div>
+              <input type="number" class="form-control text-center" id="holdings" placeholder="Amount of ICX you stake" aria-label="Holdings">
             </div>
             <button type="button" class="col-sm-6 btn btn-primary" onclick="calculateRewards()">Calculate</button>
           </form>
@@ -99,8 +94,8 @@
 
   <section id="result" class="bg-white" style="display: none;">
     <div class="container">
-      <div class="row">
-        <table class="table ">
+      <div class="row table-responsive-sm">
+        <table class="table table-borderless table-striped">
           <thead class="thead-dark">
             <tr>
               <th scope="col"></th>
@@ -114,7 +109,7 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">No Staking</th>
+              <th scope="row" class="text-right">No Staking</th>
               <td id="noStakingDay"></td>
               <td id="noStakingWeek"></td>
               <td id="noStakingMonth"></td>
@@ -123,7 +118,7 @@
               <td id="noStaking3Year"></td>
             </tr>
             <tr>
-              <th scope="row">One time Staking</th>
+              <th scope="row" class="text-right">One-Time Staking</th>
               <td id="oneTimeStakingDay"></td>
               <td id="oneTimeStakingWeek"></td>
               <td id="oneTimeStakingMonth"></td>
@@ -132,7 +127,7 @@
               <td id="oneTimeStaking3Year"></td>
             </tr>
             <tr>
-              <th scope="row">Monthly Compounding</th>
+              <th scope="row" class="text-right">Monthly Re-Staking</th>
               <td id="monthlyCompoundingDay"></td>
               <td id="monthlyCompoundingWeek"></td>
               <td id="monthlyCompoundingMonth"></td>
@@ -141,7 +136,7 @@
               <td id="monthlyCompounding3Year"></td>
             </tr>
             <tr>
-              <th scope="row">Weekly Compounding</th>
+              <th scope="row" class="text-right">Weekly Re-Staking</th>
               <td id="weeklyCompoundingDay"></td>
               <td id="weeklyCompoundingWeek"></td>
               <td id="weeklyCompoundingMonth"></td>
@@ -150,7 +145,7 @@
               <td id="weeklyCompounding3Year"></td>
             </tr>
             <tr>
-              <th scope="row">Daily Compounding</th>
+              <th scope="row" class="text-right">Daily Re-Staking</th>
               <td id="dailyCompoundingDay"></td>
               <td id="dailyCompoundingWeek"></td>
               <td id="dailyCompoundingMonth"></td>
