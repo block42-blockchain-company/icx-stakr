@@ -114,4 +114,6 @@ function calculateRewards() {
   $("#dailyCompounding1Year").text(numeral(dailyCompoundingRewards[3]).format("0.00") + " ICX");
   $("#dailyCompounding2Year").text(numeral(dailyCompoundingRewards[4]).format("0.00") + " ICX");
   $("#dailyCompounding3Year").text(numeral(dailyCompoundingRewards[5]).format("0.00") + " ICX");
+
+  $("#result").show();
 }
