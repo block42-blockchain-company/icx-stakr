@@ -92,12 +92,77 @@
             </div>
             <button type="button" class="col-sm-6 btn btn-primary" onclick="calculateRewards()">Calculate</button>
           </form>
-          <p id="result"></p>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="result">
+    <div class="container">
+      <div class="row">
+        <table class="table ">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">1 day</th>
+              <th scope="col">1 week</th>
+              <th scope="col">1 month</th>
+              <th scope="col">1 year</th>
+              <th scope="col">2 years</th>
+              <th scope="col">3 years</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">No Staking</th>
+              <td id="noStakingDay"></td>
+              <td id="noStakingWeek"></td>
+              <td id="noStakingMonth"></td>
+              <td id="noStaking1Year"></td>
+              <td id="noStaking2Year"></td>
+              <td id="noStaking3Year"></td>
+            </tr>
+            <tr>
+              <th scope="row">One time Staking</th>
+              <td id="oneTimeStakingDay"></td>
+              <td id="oneTimeStakingWeek"></td>
+              <td id="oneTimeStakingMonth"></td>
+              <td id="oneTimeStaking1Year"></td>
+              <td id="oneTimeStaking2Year"></td>
+              <td id="oneTimeStaking3Year"></td>
+            </tr>
+            <tr>
+              <th scope="row">Monthly Compounding</th>
+              <td id="monthlyCompoundingDay"></td>
+              <td id="monthlyCompoundingWeek"></td>
+              <td id="monthlyCompoundingMonth"></td>
+              <td id="monthlyCompounding1Year"></td>
+              <td id="monthlyCompounding2Year"></td>
+              <td id="monthlyCompounding3Year"></td>
+            </tr>
+            <tr>
+              <th scope="row">Weekly Compounding</th>
+              <td id="weeklyCompoundingDay"></td>
+              <td id="weeklyCompoundingWeek"></td>
+              <td id="weeklyCompoundingMonth"></td>
+              <td id="weeklyCompounding1Year"></td>
+              <td id="weeklyCompounding2Year"></td>
+              <td id="weeklyCompounding3Year"></td>
+            </tr>
+            <tr>
+              <th scope="row">Daily Compounding</th>
+              <td id="dailyCompoundingDay"></td>
+              <td id="dailyCompoundingWeek"></td>
+              <td id="dailyCompoundingMonth"></td>
+              <td id="dailyCompounding1Year"></td>
+              <td id="dailyCompounding2Year"></td>
+              <td id="dailyCompounding3Year"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
   <!--
   <section id="faq" class="bg-light">
     <div class="container">
