@@ -11,7 +11,7 @@
 
 <br>
 
-The most simple you ICON reward and staking calculator will find out there.
+The most simple ICON reward and staking calculator you will find out there.
 
 ## Licence
 
