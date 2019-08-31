@@ -81,4 +81,6 @@ footer .container a img {
 .social {
   height: 40px;
   width: 40px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
