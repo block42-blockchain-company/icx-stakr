@@ -125,5 +125,5 @@ function calculateRewards() {
   $("#result").show();
 
   // Scroll to result section
-  document.getElementById("result").scrollIntoView();
+  $('html, body').animate({ scrollTop: $("#result").offset().top }, 250);
 }
