@@ -123,4 +123,7 @@ function calculateRewards() {
 
   // Show section
   $("#result").show();
+
+  // Scroll to result section
+  document.getElementById("result").scrollIntoView();
 }
