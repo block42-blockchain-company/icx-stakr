@@ -88,3 +88,10 @@ footer .container a img {
 #copyright {
     color: gray !important;
 }
+
+@media only screen and (max-width : 768px) {
+  section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
