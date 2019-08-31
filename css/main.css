@@ -84,3 +84,7 @@ footer .container a img {
   margin-right: 5px;
   margin-left: 5px;
 }
+
+#copyright {
+    color: gray !important;
+}
