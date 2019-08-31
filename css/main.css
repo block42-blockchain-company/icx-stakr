@@ -35,18 +35,31 @@ section {
   text-align: center;
 }
 
-#calculator{
+#calculator {
   background: url("https://icon.foundation/resources/image/icon_main_img_02.png") top center no-repeat, #fff;
   background-size: auto;
 }
 
-#calculator button{
+#calculator button {
   border-radius: 0;
   background: #262626;
   border: none;
 }
 
 #calculator p {
+  margin-bottom: 2.5em;
+}
+
+.reward-info {
+  font-size: 1.3em;
+  margin-bottom: 1.3em;
+}
+
+.reward-info div span {
+  font-size: 1.5em;
+}
+
+#result p.lead {
   margin-bottom: 2.5em;
 }
 
@@ -59,10 +72,9 @@ section {
   padding-bottom: 1.3em;
   font-size: 2.5em;
   font-weight: bold;
-
 }
 
-footer .container a img{
+footer .container a img {
   margin-bottom: 1em;
 }
 

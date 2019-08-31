@@ -59,14 +59,6 @@ function calculateRewards() {
   const holdings = $("#holdings").val();
   const rewardRate = getRewardRate();
 
-  // No staking rewards
-  $("#noStakingDay").text("0 ICX");
-  $("#noStakingWeek").text("0 ICX");
-  $("#noStakingMonth").text("0 ICX");
-  $("#noStaking1Year").text("0 ICX");
-  $("#noStaking2Year").text("0 ICX");
-  $("#noStaking3Year").text("0 ICX");
-
   // OneTime staking rewards
   const oneTime = holdings * (rewardRate / 100);
   const oneTimeStakingRewards = [ oneTime / 365, oneTime / 52, oneTime / 12, oneTime, oneTime * 2, oneTime * 3 ];

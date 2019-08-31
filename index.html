@@ -94,67 +94,85 @@
 
   <section id="result" class="bg-white" style="display: none;">
     <div class="container">
-      <div class="row table-responsive-sm">
-        <table class="table table-borderless table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col"></th>
-              <th scope="col">1 day</th>
-              <th scope="col">1 week</th>
-              <th scope="col">1 month</th>
-              <th scope="col">1 year</th>
-              <th scope="col">2 years</th>
-              <th scope="col">3 years</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="text-right">No Staking</th>
-              <td id="noStakingDay"></td>
-              <td id="noStakingWeek"></td>
-              <td id="noStakingMonth"></td>
-              <td id="noStaking1Year"></td>
-              <td id="noStaking2Year"></td>
-              <td id="noStaking3Year"></td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-right">One-Time Staking</th>
-              <td id="oneTimeStakingDay"></td>
-              <td id="oneTimeStakingWeek"></td>
-              <td id="oneTimeStakingMonth"></td>
-              <td id="oneTimeStaking1Year"></td>
-              <td id="oneTimeStaking2Year"></td>
-              <td id="oneTimeStaking3Year"></td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-right">Monthly Re-Staking</th>
-              <td id="monthlyCompoundingDay"></td>
-              <td id="monthlyCompoundingWeek"></td>
-              <td id="monthlyCompoundingMonth"></td>
-              <td id="monthlyCompounding1Year"></td>
-              <td id="monthlyCompounding2Year"></td>
-              <td id="monthlyCompounding3Year"></td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-right">Weekly Re-Staking</th>
-              <td id="weeklyCompoundingDay"></td>
-              <td id="weeklyCompoundingWeek"></td>
-              <td id="weeklyCompoundingMonth"></td>
-              <td id="weeklyCompounding1Year"></td>
-              <td id="weeklyCompounding2Year"></td>
-              <td id="weeklyCompounding3Year"></td>
-            </tr>
-            <tr>
-              <th scope="row" class="text-right">Daily Re-Staking</th>
-              <td id="dailyCompoundingDay"></td>
-              <td id="dailyCompoundingWeek"></td>
-              <td id="dailyCompoundingMonth"></td>
-              <td id="dailyCompounding1Year"></td>
-              <td id="dailyCompounding2Year"></td>
-              <td id="dailyCompounding3Year"></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="row">
+        <div class="col-sm-12 col-lg-8 mx-auto">
+          <h2>Rewards</h2>
+          <div class="row reward-info">
+            <div class="col-sm-12 col-md-3">
+              <p>Daily<br><span id="rewards-daily">1 ICX</span></p>
+            </div>
+            <div class="col-sm-12 col-md-3">
+              <p>Weekly<br><span id="rewards-weekly">7 ICX</span></p>
+            </div>
+            <div class="col-sm-12 col-md-3">
+              <p>Monthly<br><span id="rewards-monthly">30 ICX</span></p>
+            </div>
+            <div class="col-sm-12 col-md-3">
+              <p>Yearly<br><span id="rewards-yearly">365 ICX</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-lg-8 mx-auto">
+          <h2>Re-Staking</h2>
+          <p class="lead">Ever thought about re-staking? In the table below you find the numbers for various re-staking periods in order to decide at which rate you want to compound your ICX rewards to increase your returns.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 mx-auto table-responsive">
+          <table class="table table-borderless table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">1 day</th>
+                <th scope="col">1 week</th>
+                <th scope="col">1 month</th>
+                <th scope="col">1 year</th>
+                <th scope="col">2 years</th>
+                <th scope="col">3 years</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-right">One-Time Staking</th>
+                <td id="oneTimeStakingDay"></td>
+                <td id="oneTimeStakingWeek"></td>
+                <td id="oneTimeStakingMonth"></td>
+                <td id="oneTimeStaking1Year"></td>
+                <td id="oneTimeStaking2Year"></td>
+                <td id="oneTimeStaking3Year"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-right">Monthly Re-Staking</th>
+                <td id="monthlyCompoundingDay"></td>
+                <td id="monthlyCompoundingWeek"></td>
+                <td id="monthlyCompoundingMonth"></td>
+                <td id="monthlyCompounding1Year"></td>
+                <td id="monthlyCompounding2Year"></td>
+                <td id="monthlyCompounding3Year"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-right">Weekly Re-Staking</th>
+                <td id="weeklyCompoundingDay"></td>
+                <td id="weeklyCompoundingWeek"></td>
+                <td id="weeklyCompoundingMonth"></td>
+                <td id="weeklyCompounding1Year"></td>
+                <td id="weeklyCompounding2Year"></td>
+                <td id="weeklyCompounding3Year"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-right">Daily Re-Staking</th>
+                <td id="dailyCompoundingDay"></td>
+                <td id="dailyCompoundingWeek"></td>
+                <td id="dailyCompoundingMonth"></td>
+                <td id="dailyCompounding1Year"></td>
+                <td id="dailyCompounding2Year"></td>
+                <td id="dailyCompounding3Year"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
