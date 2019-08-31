@@ -57,6 +57,16 @@ function getRewardRate() {
 
 function calculateRewards() {
   const holdings = $("#holdings").val();
+
+  // Check if input is valid
+  if (holdings <= 0) {
+    $("#holdings").addClass("is-invalid");
+    return
+  }
+
+  // Remove invalid validation style (if there is any applied)
+  $("#holdings").removeClass("is-invalid");
+
   const rewardRate = getRewardRate();
 
   // OneTime staking rewards
@@ -105,6 +115,12 @@ function calculateRewards() {
   $("#dailyCompounding2Year").text(numeral(dailyCompoundingRewards[4]).format("0,") + " ICX");
   $("#dailyCompounding3Year").text(numeral(dailyCompoundingRewards[5]).format("0,") + " ICX");
 
-  // Show table
+  // Rewards
+  $("#rewards-daily").text(numeral(oneTimeStakingRewards[0]).format("0,") + " ICX");
+  $("#rewards-weekly").text(numeral(oneTimeStakingRewards[1]).format("0,") + " ICX");
+  $("#rewards-monthly").text(numeral(oneTimeStakingRewards[2]).format("0,") + " ICX");
+  $("#rewards-yearly").text(numeral(oneTimeStakingRewards[3]).format("0,") + " ICX");
+
+  // Show section
   $("#result").show();
 }
