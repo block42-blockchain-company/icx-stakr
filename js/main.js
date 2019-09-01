@@ -110,7 +110,7 @@ function calculateRewards() {
   $("#rewards-yearly").text("~" + numeral(oneTimeStakingRewards[3]).format("0,0.00") + " ICX");
 
   // Track calculation
-  ga("send", "event", "Calculator", "Click", "Calculate", holdings);
+  ga("send", "event", "Calculator", "Click", "", holdings);
 
   // Show section
   $("#result").show();
