@@ -14,7 +14,11 @@
 
 <br>
 
-The most simple ICON reward and staking calculator you will find out there.
+![image](https://user-images.githubusercontent.com/6087393/64079105-a5a1d600-cce3-11e9-8a38-0f2e4a1b14aa.png)
+
+## Read More
+
+https://medium.com/block42-blockchain-company/icx-stakr-released-773772cafc3f
 
 ## Licence
 
