@@ -26,8 +26,8 @@ function fetchIconNetworkData() {
       console.log("Staked Supply: " + stakedSupply + " ICX");
       console.log("Delegated Supply: " + delegatedSupply + " ICX");
 
-      $("#staked").text(numeral(stakedSupply).format("0,0") + " ICX");
-      $("#voted").text(numeral(delegatedSupply).format("0,0") + " ICX");
+      $("#staked").text(numeral((stakedSupply / totalSupply) * 100).format("0.00") + " %");
+      $("#voted").text(numeral((delegatedSupply / totalSupply) * 100).format("0.00") + " %");
       $("#reward-rate").text(numeral(getRewardRate()).format("0.00") + " %");
       $("#un-staking-period").text("~" + numeral(getUnStakingPeriod()).format("0") + " days");
     })
