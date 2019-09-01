@@ -36,7 +36,7 @@ section {
 }
 
 #calculator {
-  background: url("https://icon.foundation/resources/image/icon_main_img_02.png") top center no-repeat, #fff;
+  background: url("/img/background.png") top center no-repeat, #fff;
   background-size: auto;
 }
 
