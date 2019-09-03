@@ -30,6 +30,12 @@ header .supply-info div span {
   font-size: 1.5em;
 }
 
+.navbar-brand img {
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 section {
   padding: 100px;
   text-align: center;
