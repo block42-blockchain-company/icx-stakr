@@ -65,8 +65,28 @@ section {
   font-size: 1.5em;
 }
 
+.reward-info div .reward-icx {
+  font-size: 1.5em;
+}
+
+.reward-info div .reward-usd {
+  font-size: 0.8em;
+  color: gray !important;
+}
+
 #result p.lead {
   margin-bottom: 2.5em;
+}
+
+table th {
+  vertical-align: middle !important;
+}
+table td {
+  vertical-align: middle !important;
+}
+
+table td span:last-child {
+  color: gray;
 }
 
 .bg-primary {

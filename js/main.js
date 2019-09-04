@@ -26,10 +26,16 @@ function fetchIconNetworkData() {
       console.log("Staked Supply: " + stakedSupply + " ICX");
       console.log("Delegated Supply: " + delegatedSupply + " ICX");
 
-      $("#staked").text(numeral((stakedSupply / totalSupply) * 100).format("0.00") + " %");
-      $("#voted").text(numeral((delegatedSupply / totalSupply) * 100).format("0.00") + " %");
-      $("#reward-rate").text(numeral(getRewardRate()).format("0.00") + " %");
-      $("#un-staking-period").text("~" + numeral(getUnStakingPeriod()).format("0") + " days");
+      axios.get("https://api.coinpaprika.com/v1/coins/icx-icon/ohlcv/today").then(function (coinpaprikaResponse) {
+        const icxPrice = coinpaprikaResponse.data[0].close;
+
+        data["icxPrice"] = icxPrice;
+
+        $("#staked").text(numeral((stakedSupply / totalSupply) * 100).format("0.00") + " %");
+        $("#voted").text(numeral((delegatedSupply / totalSupply) * 100).format("0.00") + " %");
+        $("#reward-rate").text(numeral(getRewardRate()).format("0.00") + " %");
+        $("#un-staking-period").text("~" + numeral(getUnStakingPeriod()).format("0") + " days");
+      });
     })
   })
 }
@@ -72,45 +78,65 @@ function calculateRewards() {
   // OneTime staking rewards
   const oneTime = holdings * (rewardRate / 100);
   const oneTimeStakingRewards = [ oneTime / 365, oneTime / 52, oneTime / 12, oneTime, oneTime * 2, oneTime * 3 ];
-  $("#oneTimeStaking1Year").text("~" + numeral(oneTimeStakingRewards[3]).format("0,0.00") + " ICX");
-  $("#oneTimeStaking2Year").text("~" + numeral(oneTimeStakingRewards[4]).format("0,0.00") + " ICX");
-  $("#oneTimeStaking3Year").text("~" + numeral(oneTimeStakingRewards[5]).format("0,0.00") + " ICX");
+  $("#oneTimeStaking1Year-icx").text("~" + numeral(oneTimeStakingRewards[3]).format("0,0.00") + " ICX (± 0.00 %)");
+  $("#oneTimeStaking2Year-icx").text("~" + numeral(oneTimeStakingRewards[4]).format("0,0.00") + " ICX (± 0.00 %)");
+  $("#oneTimeStaking3Year-icx").text("~" + numeral(oneTimeStakingRewards[5]).format("0,0.00") + " ICX (± 0.00 %)");
+  $("#oneTimeStaking1Year-usd").text("$ " + numeral(oneTimeStakingRewards[3] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#oneTimeStaking2Year-usd").text("$ " + numeral(oneTimeStakingRewards[4] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#oneTimeStaking3Year-usd").text("$ " + numeral(oneTimeStakingRewards[5] * data["icxPrice"]).format("0,0.00") + " USD");
 
   // Monthly compounding rewards
   const monthlyCompounding = holdings * ((1 + (rewardRate / (12 * 100))) ** (12 * 1)) - holdings;
   const monthlyCompounding_2Y = holdings * ((1 + (rewardRate / (12 * 100))) ** (12 * 2)) - holdings;
   const monthlyCompounding_3Y = holdings * ((1 + (rewardRate / (12 * 100))) ** (12 * 3)) - holdings;
   const monthlyCompoundingRewards = [ monthlyCompounding / 365, monthlyCompounding / 52, monthlyCompounding / 12, monthlyCompounding, monthlyCompounding_2Y, monthlyCompounding_3Y ];
-  $("#monthlyCompounding1Year").text("~" + numeral(monthlyCompoundingRewards[3]).format("0,0.00") + " ICX");
-  $("#monthlyCompounding2Year").text("~" + numeral(monthlyCompoundingRewards[4]).format("0,0.00") + " ICX");
-  $("#monthlyCompounding3Year").text("~" + numeral(monthlyCompoundingRewards[5]).format("0,0.00") + " ICX");
+  $("#monthlyCompounding1Year-icx").text("~" + numeral(monthlyCompoundingRewards[3]).format("0,0.00") + " ICX (+ " + numeral((monthlyCompoundingRewards[3] / oneTimeStakingRewards[3] - 1) * 100).format("0.00") + " %)");
+  $("#monthlyCompounding2Year-icx").text("~" + numeral(monthlyCompoundingRewards[4]).format("0,0.00") + " ICX (+ " + numeral((monthlyCompoundingRewards[4] / oneTimeStakingRewards[4] - 1) * 100).format("0.00") + " %)");
+  $("#monthlyCompounding3Year-icx").text("~" + numeral(monthlyCompoundingRewards[5]).format("0,0.00") + " ICX (+ " + numeral((monthlyCompoundingRewards[5] / oneTimeStakingRewards[5] - 1) * 100).format("0.00") + " %)");
+  $("#monthlyCompounding1Year-usd").text("$ " + numeral(monthlyCompoundingRewards[3] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#monthlyCompounding2Year-usd").text("$ " + numeral(monthlyCompoundingRewards[4] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#monthlyCompounding3Year-usd").text("$ " + numeral(monthlyCompoundingRewards[5] * data["icxPrice"]).format("0,0.00") + " USD");
 
   // Weekly compounding rewards
   const weeklyCompounding = holdings * ((1 + (rewardRate / (52 * 100))) ** (52 * 1)) - holdings;
   const weeklyCompounding_2Y = holdings * ((1 + (rewardRate / (52 * 100))) ** (52 * 2)) - holdings;
   const weeklyCompounding_3Y = holdings * ((1 + (rewardRate / (52 * 100))) ** (52 * 3)) - holdings;
   const weeklyCompoundingRewards = [ weeklyCompounding / 365, weeklyCompounding / 52, weeklyCompounding / 12, weeklyCompounding, weeklyCompounding_2Y, weeklyCompounding_3Y ];
-  $("#weeklyCompounding1Year").text("~" + numeral(weeklyCompoundingRewards[3]).format("0,0.00") + " ICX");
-  $("#weeklyCompounding2Year").text("~" + numeral(weeklyCompoundingRewards[4]).format("0,0.00") + " ICX");
-  $("#weeklyCompounding3Year").text("~" + numeral(weeklyCompoundingRewards[5]).format("0,0.00") + " ICX");
+  $("#weeklyCompounding1Year-icx").text("~" + numeral(weeklyCompoundingRewards[3]).format("0,0.00") + " ICX (+ " + numeral((weeklyCompoundingRewards[3] / oneTimeStakingRewards[3] - 1) * 100).format("0.00") + " %)");
+  $("#weeklyCompounding2Year-icx").text("~" + numeral(weeklyCompoundingRewards[4]).format("0,0.00") + " ICX (+ " + numeral((weeklyCompoundingRewards[4] / oneTimeStakingRewards[4] - 1) * 100).format("0.00") + " %)");
+  $("#weeklyCompounding3Year-icx").text("~" + numeral(weeklyCompoundingRewards[5]).format("0,0.00") + " ICX (+ " + numeral((weeklyCompoundingRewards[5] / oneTimeStakingRewards[5] - 1) * 100).format("0.00") + " %)");
+  $("#weeklyCompounding1Year-usd").text("$ " + numeral(weeklyCompoundingRewards[3] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#weeklyCompounding2Year-usd").text("$ " + numeral(weeklyCompoundingRewards[4] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#weeklyCompounding3Year-usd").text("$ " + numeral(weeklyCompoundingRewards[5] * data["icxPrice"]).format("0,0.00") + " USD");
 
   // Daily Compounding rewards
   const dailyCompounding = holdings * ((1 + (rewardRate / (365 * 100))) ** (365 * 1)) - holdings;
   const dailyCompounding_2Y = holdings * ((1 + (rewardRate / (365 * 100))) ** (365 * 2)) - holdings;
   const dailyCompounding_3Y = holdings * ((1 + (rewardRate / (365 * 100))) ** (365 * 3)) - holdings;
   const dailyCompoundingRewards = [ dailyCompounding / 365, dailyCompounding / 52, dailyCompounding / 12, dailyCompounding, dailyCompounding_2Y, dailyCompounding_3Y ];
-  $("#dailyCompounding1Year").text("~" + numeral(dailyCompoundingRewards[3]).format("0,0.00") + " ICX");
-  $("#dailyCompounding2Year").text("~" + numeral(dailyCompoundingRewards[4]).format("0,0.00") + " ICX");
-  $("#dailyCompounding3Year").text("~" + numeral(dailyCompoundingRewards[5]).format("0,0.00") + " ICX");
+  $("#dailyCompounding1Year-icx").text("~" + numeral(dailyCompoundingRewards[3]).format("0,0.00") + " ICX (+ " + numeral((dailyCompoundingRewards[3] / oneTimeStakingRewards[3] - 1) * 100).format("0.00") + " %)");
+  $("#dailyCompounding2Year-icx").text("~" + numeral(dailyCompoundingRewards[4]).format("0,0.00") + " ICX (+ " + numeral((dailyCompoundingRewards[4] / oneTimeStakingRewards[4] - 1) * 100).format("0.00") + " %)");
+  $("#dailyCompounding3Year-icx").text("~" + numeral(dailyCompoundingRewards[5]).format("0,0.00") + " ICX (+ " + numeral((dailyCompoundingRewards[5] / oneTimeStakingRewards[5] - 1) * 100).format("0.00") + " %)");
+  $("#dailyCompounding1Year-usd").text("$ " + numeral(dailyCompoundingRewards[3] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#dailyCompounding2Year-usd").text("$ " + numeral(dailyCompoundingRewards[4] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#dailyCompounding3Year-usd").text("$ " + numeral(dailyCompoundingRewards[5] * data["icxPrice"]).format("0,0.00") + " USD");
 
-  // Rewards
-  $("#rewards-daily").text("~" + numeral(oneTimeStakingRewards[0]).format("0,0.00") + " ICX");
-  $("#rewards-weekly").text("~" + numeral(oneTimeStakingRewards[1]).format("0,0.00") + " ICX");
-  $("#rewards-monthly").text("~" + numeral(oneTimeStakingRewards[2]).format("0,0.00") + " ICX");
-  $("#rewards-yearly").text("~" + numeral(oneTimeStakingRewards[3]).format("0,0.00") + " ICX");
+  // ICX Rewards
+  $("#rewards-daily-icx").text("~" + numeral(oneTimeStakingRewards[0]).format("0,0.00") + " ICX");
+  $("#rewards-weekly-icx").text("~" + numeral(oneTimeStakingRewards[1]).format("0,0.00") + " ICX");
+  $("#rewards-monthly-icx").text("~" + numeral(oneTimeStakingRewards[2]).format("0,0.00") + " ICX");
+  $("#rewards-yearly-icx").text("~" + numeral(oneTimeStakingRewards[3]).format("0,0.00") + " ICX");
+
+  // USD Rewards
+  $("#rewards-daily-usd").text("$ " + numeral(oneTimeStakingRewards[0] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#rewards-weekly-usd").text("$ " + numeral(oneTimeStakingRewards[1] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#rewards-monthly-usd").text("$ " + numeral(oneTimeStakingRewards[2] * data["icxPrice"]).format("0,0.00") + " USD");
+  $("#rewards-yearly-usd").text("$ " + numeral(oneTimeStakingRewards[3] * data["icxPrice"]).format("0,0.00") + " USD");
 
   // Track calculation
-  ga("send", "event", "Calculator", "Click", "", holdings);
+  if (window.location.hostname !== "localhost") {
+    ga("send", "event", "Calculator", "Click", "", holdings);
+  }
 
   // Show section
   $("#result").show();

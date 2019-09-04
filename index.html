@@ -22,7 +22,7 @@
   <meta property="og:description" content="The most simple ICON reward and staking calculator you will find out there. 🧐 From ICONists, for ICONists. 🤗">
   <meta property="og:url" content="https://icxstakr.io">
 
-  <title>ICX Stakr by block42</title>
+  <title>ICX Stakr</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -134,16 +134,16 @@
           <h2>Rewards</h2>
           <div class="row reward-info">
             <div class="col-sm-12 col-md-3">
-              <p>Daily<br><span id="rewards-daily"></span></p>
+              <p>Daily<br><span id="rewards-daily-icx" class="reward-icx"></span><br><span id="rewards-daily-usd" class="reward-usd"></span></p>
             </div>
             <div class="col-sm-12 col-md-3">
-              <p>Weekly<br><span id="rewards-weekly"></span></p>
+              <p>Weekly<br><span id="rewards-weekly-icx" class="reward-icx"></span><br><span id="rewards-weekly-usd" class="reward-usd"></span></p>
             </div>
             <div class="col-sm-12 col-md-3">
-              <p>Monthly<br><span id="rewards-monthly"></span></p>
+              <p>Monthly<br><span id="rewards-monthly-icx" class="reward-icx"></span><br><span id="rewards-monthly-usd" class="reward-usd"></span></p>
             </div>
             <div class="col-sm-12 col-md-3">
-              <p>Yearly<br><span id="rewards-yearly"></span></p>
+              <p>Yearly<br><span id="rewards-yearly-icx" class="reward-icx"></span><br><span id="rewards-yearly-usd" class="reward-usd"></span></p>
             </div>
           </div>
         </div>
@@ -168,27 +168,27 @@
             <tbody>
               <tr>
                 <th scope="row" class="text-right">No Re-Staking</th>
-                <td id="oneTimeStaking1Year"></td>
-                <td id="oneTimeStaking2Year"></td>
-                <td id="oneTimeStaking3Year"></td>
+                <td><span id="oneTimeStaking1Year-icx"></span><br><span id="oneTimeStaking1Year-usd"></span></td>
+                <td><span id="oneTimeStaking2Year-icx"></span><br><span id="oneTimeStaking2Year-usd"></span></td>
+                <td><span id="oneTimeStaking3Year-icx"></span><br><span id="oneTimeStaking3Year-usd"></span></td>
               </tr>
               <tr>
                 <th scope="row" class="text-right">Monthly Re-Staking</th>
-                <td id="monthlyCompounding1Year"></td>
-                <td id="monthlyCompounding2Year"></td>
-                <td id="monthlyCompounding3Year"></td>
+                <td><span id="monthlyCompounding1Year-icx"></span><br><span id="monthlyCompounding1Year-usd"></span></td>
+                <td><span id="monthlyCompounding2Year-icx"></span><br><span id="monthlyCompounding2Year-usd"></span></td>
+                <td><span id="monthlyCompounding3Year-icx"></span><br><span id="monthlyCompounding3Year-usd"></span></td>
               </tr>
               <tr>
                 <th scope="row" class="text-right">Weekly Re-Staking</th>
-                <td id="weeklyCompounding1Year"></td>
-                <td id="weeklyCompounding2Year"></td>
-                <td id="weeklyCompounding3Year"></td>
+                <td><span id="weeklyCompounding1Year-icx"></span><br><span id="weeklyCompounding1Year-usd"></span></td>
+                <td><span id="weeklyCompounding2Year-icx"></span><br><span id="weeklyCompounding2Year-usd"></span></td>
+                <td><span id="weeklyCompounding3Year-icx"></span><br><span id="weeklyCompounding3Year-usd"></span></td>
               </tr>
               <tr>
                 <th scope="row" class="text-right">Daily Re-Staking</th>
-                <td id="dailyCompounding1Year"></td>
-                <td id="dailyCompounding2Year"></td>
-                <td id="dailyCompounding3Year"></td>
+                <td><span id="dailyCompounding1Year-icx"></span><br><span id="dailyCompounding1Year-usd"></span></td>
+                <td><span id="dailyCompounding2Year-icx"></span><br><span id="dailyCompounding2Year-usd"></span></td>
+                <td><span id="dailyCompounding3Year-icx"></span><br><span id="dailyCompounding3Year-usd"></span></td>
               </tr>
             </tbody>
           </table>
@@ -211,9 +211,9 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>About us</h2>
-          <p class="lead">We are <span class="font-weight-bold">block42 Blockchain Company</span>, a P-Rep candidate from Graz, Austria 🇦🇹. Our goal is to bring tremendous value to the ICON ecosystem by providing consulting & development services on top of the ICON blockchain as well as strengthen the European ICON community with our <a href="https://medium.com/block42-blockchain-company/announcing-icon-europe-community-93f797e54025">ICON Europe</a> initiative!</p>
+          <p class="lead">We are <span class="font-weight-bold">block42 Blockchain Company</span> - a P-Rep candidate from Austria. Our goal is to bring tremendous value to the ICON ecosystem by providing consulting & development services on top of the ICON blockchain as well as strengthen the European ICON community with our <a href="https://medium.com/block42-blockchain-company/announcing-icon-europe-community-93f797e54025">ICON Europe</a> initiative!</p>
+          <p class="lead">If you like what we do, please <a href="https://medium.com/block42-blockchain-company/how-to-icon-p-rep-voting-163b5f143da8" target="_blank">vote for us as a P-Rep</a>. We appreciate every single vote! 🙂</p>
           <p><i>Check out our P-Rep application: <a href="https://icon.community/iconsensus/candidates/132/" target="_blank">here</a></i></p>
-          <p class="lead">If you like what we do, please <a href="https://medium.com/block42-blockchain-company/how-to-icon-p-rep-voting-163b5f143da8" target="_blank">vote for us as a P-Rep</a>! We appreciate every single vote. 🔥</p>
         </div>
       </div>
     </div>
@@ -229,7 +229,6 @@
       <p class="m-0 text-center text-white">Made with ❤️ in Austria.</p>
       <p id="copyright" class="m-0 text-center text-white">Copyright &copy; block42 Blockchain Company 2019</p>
     </div>
-    <!-- /.container -->
   </footer>
 
   <!-- Bootstrap core JavaScript -->
