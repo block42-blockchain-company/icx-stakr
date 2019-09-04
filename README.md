@@ -4,7 +4,7 @@
   <a href="https://icxstakr.io">
     <img src="https://img.shields.io/badge/status-live-brightgreen.svg" alt="Live" />
   </a>
-  <a href="https://t.me/block42_crypto">
+  <a href="https://twitter.com/block42_company">
     <img src="https://img.shields.io/badge/chat-Twitter-1da1f2.svg" alt="Telegram" />
   </a>
   <a href="#">
