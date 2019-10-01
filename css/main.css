@@ -109,6 +109,12 @@ table td span:last-child {
   font-weight: bold;
 }
 
+section#about-us img {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+
 footer .container a img {
   margin-bottom: 1em;
 }
