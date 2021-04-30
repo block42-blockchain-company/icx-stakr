@@ -144,3 +144,10 @@ function calculateRewards() {
   // Scroll to result section
   $('html, body').animate({ scrollTop: $("#result").offset().top }, 500);
 }
+
+function redirect(){
+  window.open(
+      "http://bit.ly/ICONxMyCointainer",
+      "_blank"
+  )
+}

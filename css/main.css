@@ -61,6 +61,11 @@ section#vote h2 {
   border: none;
 }
 
+.btn-mycontainer{
+ border-radius: 0;
+ background: #007bff !important;
+}
+
 #calculator p {
   margin-bottom: 2.5em;
 }
